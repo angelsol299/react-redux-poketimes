@@ -1,6 +1,7 @@
 import React from "react";
+import { Link, NavLink, withRouter } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = props => {
   return (
     <nav className="nav-wrapper red darken-3">
       <div className="container">
@@ -9,13 +10,13 @@ const Navbar = () => {
         </a>
         <ul className="right">
           <li>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="/about">About</a>
+            <NavLink to="/about">About</NavLink>
           </li>
           <li>
-            <a href="/contact">Contact</a>
+            <NavLink to="/contact">Contact</NavLink>
           </li>
         </ul>
       </div>
@@ -23,4 +24,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default withRouter(Navbar);
